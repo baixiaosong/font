@@ -64,12 +64,14 @@
             name:name,
             password:password
         }
+        console.log(name);
+        console.log(password);
         $.ajax({
-            url:'http://localhost/user/addUser',
+            url:'http://localhost/user/addUser2',
             type:'post',
             dataType:'json',
-            data:{"name":name,"password":password},
-            // contentType: "application/json",
+            data:JSON.stringify(user),
+            contentType: "application/json",
             success:function(data){
                 console.log(data);
                 if(data.success){
